@@ -1,0 +1,17 @@
+{% extends "base.djhtml" %} 
+      
+{% load i18n %}
+      
+{% block pathway %}<span>{%trans "you are here" %} :: </span> {% endblock %}
+      
+{% block  content %}	          
+	    <div id="blogcontent">
+	        {% block blogcontent %}{% endblock %}
+	    </div>
+{% endblock %}
+
+
+{% block footerscripts %}
+{{block.super}}
+ {% comment %} just a placeholder for future use... it will append scripts to site base.djhtml{% endcomment %} 
+{% endblock %}

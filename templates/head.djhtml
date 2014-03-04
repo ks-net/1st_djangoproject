@@ -1,0 +1,8 @@
+{% load i18n %}
+
+{% block head %}
+<h1>My First Django project!</h1> 
+<span style="font-size:12px;font-style:italic;color:#888;margin-left:16px;">
+	Hi guys! This is my first django project... wish me good luck!!!
+</span>
+{% endblock %}

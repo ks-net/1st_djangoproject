@@ -1,0 +1,65 @@
+{% extends "blog/base_blog.djhtml" %}
+
+{% load i18n %}
+
+{% block title %}{{ post.title }} - {{ site_name }}{% endblock %}
+{% block pathway %}{{block.super}}<a href="/">{% trans "Home" %}</a> &raquo; <a href="{% url 'blog:index' %}">{% trans "Blog" %}</a> &raquo; {{ post.title }}{% endblock %}
+
+
+{% block  blogcontent %}
+<h1>{{ post.title }}</h1>
+{{ post.intro }}
+<br/>
+{{ post.body|safe }}
+<br/>
+
+{% trans "Date" %}
+
+{% load tz %}
+{{post.modified|localtime }}
+{% get_current_timezone as TIME_ZONE %}
+{% get_current_language as language %}
+
+{% include "blog/tags_post.djhtml" %}
+
+<br/>
+<!-- Disqus comments start here -->
+<div id="disqus_thread"> </div>
+	<script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'mydjangoproject'; // required: replace example with your forum shortname
+	    var disqus_identifier = 'Disqus{{ post.id }}';
+	    var disqus_title = '{{ post.title }}';
+	    var disqus_url = '{{ site_url }}{{ post.get_absolute_url }}';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+	</script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<br/>
+<a href="{% url 'blog:index' %}">.....  RETURN BACK TO THE LIST .....</a>
+{% endblock blogcontent %}
+
+{% block footerscripts %}
+{{block.super}}
+<!-- Disqus comments footer script -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'mydjangoproject'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+{% endblock footerscripts %}
+

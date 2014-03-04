@@ -1,0 +1,23 @@
+{% extends "blog/base_blog.djhtml" %}
+
+{% load i18n %}
+
+{% block title %}{%trans "Blog" %} - {{ site_name }}{% endblock %}
+
+{% block pathway %}{{block.super}}<a href="/">{%trans "Home" %}</a> &raquo; {{index}}{% endblock %}
+
+{% block blogcontent %} {{ post.front_time }}
+	{% if post_list %}	
+	<ul>
+		{% for post in post_list %}
+		<li>
+			<a href="{{ post.get_absolute_url }}" data-disqus-identifier="Disqus{{ post.id }}">{{ post.title }}</a> 
+		</li>
+		{% endfor %}
+	</ul>
+	{% else %}
+	<p>
+		{% trans "No posts are available." %}
+	</p>
+	{% endif %}
+{% endblock %}

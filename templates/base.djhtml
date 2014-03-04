@@ -1,0 +1,54 @@
+{% load static %}{% load firstof from future %}<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+<head>
+<title>{% block title %}{% endblock %}</title>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu|Comfortaa|Open+Sans&subset=latin,greek' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="{% static "assets/css/base.css" %}" >
+{% block extrastyle %}{% endblock %}
+{% block extrahead %}{% endblock %}
+		
+</head>
+{% load i18n %}
+
+<body>
+<div id="wrapper">	
+	<div id="head">
+			{% include "head.djhtml" %}
+			<div class="clear"> </div>
+	</div>
+	
+	<div id="conwrap">
+		<div id="content">
+			<div class="inpad">
+			<div id="pathway">
+				{% block pathway %}{% endblock %}
+			</div>
+				{% block content %}{% endblock %}
+			<div class="clear"> </div>
+			</div>			
+		</div>
+		
+		<div id="sidebar">
+			<div class="inpad">
+			{% include "sidebar.djhtml" %}
+			<div class="clear"> </div>
+			</div>			
+		</div>
+		<div class="clear"> </div>
+	</div>	
+	
+
+	<div class="clear">	</div>
+</div>
+
+<div id="footer">
+	<div id="infoo">
+		{% include "footer.djhtml" %}
+	<div class="clear"> </div>			
+	</div>
+	<div id="copyright">Ks-net.gr &copy; 2014 All Rights reserved.</div>
+</div>
+{% comment %}<div class="debug">{% debug %}</div>{% endcomment %}
+{% block footerscripts %}{% endblock %}	
+</body>
+</html>

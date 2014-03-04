@@ -1,0 +1,35 @@
+
+body {/*font-family: Arial, sans-serif if google fonts bellow not present*/;min-height:800px;
+background:linear-gradient(to bottom, #222 210px, #F1F1F1 212px, #fff 50%) no-repeat;border: 0;padding:0;margin:0;}
+body {color:#444;font-family:/*'Ubuntu', sans-serif*/ 'Open Sans', sans-serif;font-weight:normal;font-size:14px;line-height:22px;}
+.clear {clear:both!important;}
+
+#pathway{font-size:12px;color:#888;padding:3px;margin:5px 0;}
+#pathway span {font-size:12px;color:#444;}
+#wrapper {width:1100px;background:none;padding:0;margin:0 auto;}
+#head{overflow:hidden!important;width:1100px;height:90px;/*background: linear-gradient(to bottom, #CFCFCF 0%, #FFFFFF 100%);*/border-radius: 4px; padding:0;margin:10px 0 16px 0;}
+#conwrap {width:1100px;min-height:440px;background:#fff;border-radius: 4px; padding:0!important;margin:10px 0;}
+#content{float:left;width:740px;margin:0;padding:0;overflow:hidden!important;}
+#sidebar {float:right;width:360px;margin:0;padding:0;overflow:hidden!important;}
+.inpad {padding:10px;}
+
+#footer {display:block!important;width:100%!important;background:linear-gradient(to bottom, #EBEAE2 0%, #FFFFFC 100%);padding:0px!important;margin:10px 0!important;}
+#infoo {min-height:80px;width:1060px!important;border-top:1px dotted #D0CBB1;padding:10px;margin:0 auto!important;}
+#copyright {width:1060px!important;margin:30px auto!important;color:#88857D;font-size:11px; }
+
+h1,h2,h3,h4,h5,h6 {text-shadow:0px 1px 0px #fff;color:#3C3C3C;font-family: 'Comfortaa', cursive;}
+h1 {font-size:26px;line-height:32px;margin:8px;padding:8px;}
+h2 {font-size:24px;line-height:28px;margin:5px;padding:5px;}
+#head h1 {text-shadow:2px 2px 0px #000;padding:4px;margin:6px 0;color:#F1F1F1;font-weight:bold;font-size:32px;line-height:34px; }
+#sidebar h3 {font-size:20px;line-height:24px;margin:10px 0 5px 0;padding:12px 5px 7px 10px;border-radius:3px;
+border:1px solid #EAEAEA;color:#3C3C3C;background:linear-gradient(to bottom, #EDEDED 54%, #F5F5F5 63%);text-shadow:1px 1px 0px #fff;box-shadow:1px 1px 0px #C1C1C1;}
+
+
+a:link, a:visited, a:active {outline:none;text-decoration: none;color:#277F41;}
+a:hover{color:#013E25;}
+
+.debug {width:97%;display:block;white-space:pre;unicode-bidi:embed;font-family:monospace;font-size:13px;color:#039;padding:10px;margin:10px auto;background:#FFF9E1;border:1px solid gray;}
+    
+    
+    
+   

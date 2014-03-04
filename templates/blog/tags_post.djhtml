@@ -1,0 +1,9 @@
+
+
+{% load i18n %}
+
+{% block tags %}
+	<div>		
+		{%trans "Tags:" %} 	{{ post.tags }}	
+	</div>    
+{% endblock tags %} 

@@ -1,0 +1,3 @@
+{% load i18n %}
+
+{% block footer %}<h4>my footer is here </h4> {% endblock %}
